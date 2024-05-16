@@ -1,18 +1,39 @@
+<<<<<<< Updated upstream
 import 'package:flutter/material.dart';
+=======
+// ignore_for_file: depend_on_referenced_packages
 
-void main() {
+import 'package:flutter/material.dart';
+import 'package:hive_flutter/hive_flutter.dart';
+import 'package:get/get.dart';
+import 'package:let_me_cook/constants/app_colors.dart';
+
+import 'package:let_me_cook/helpers/local_storage_helpers.dart';
+import 'package:let_me_cook/views/intro/splash_screen.dart';
+
+Future<void> main() async {
+  await Hive.initFlutter();
+  await LocalSrorageHelper.initLocalStorageHelper();
+>>>>>>> Stashed changes
+
   runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
 
   // This widget is the root of your application.
   @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
+    return GetMaterialApp(
+      title: 'Let Me Cook',
       theme: ThemeData(
+<<<<<<< Updated upstream
         // This is the theme of your application.
         //
         // TRY THIS: Try running your application with "flutter run". You'll see
@@ -120,6 +141,14 @@ class _MyHomePageState extends State<MyHomePage> {
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
+=======
+        primaryColor: ColorPalette.primaryColor,
+        scaffoldBackgroundColor: ColorPalette.bgScaffoldColor,
+        //backgroundColor: ColorPalette.bgScaffoldColor,
+      ),
+      debugShowCheckedModeBanner: false,
+      home: const SplashScreen(),
+>>>>>>> Stashed changes
     );
   }
 }
