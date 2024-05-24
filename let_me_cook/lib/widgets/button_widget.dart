@@ -21,8 +21,9 @@ class ButtonWidget extends StatelessWidget {
             vertical: Dimensions.widthPadding15 + 1,
             horizontal: Dimensions.widthPadding100 + Dimensions.width140 + 6),
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(Dimensions.radius15 + 1),
-            color: ColorPalette.primaryColor),
+          borderRadius: BorderRadius.circular(Dimensions.radius15 + 1),
+          gradient: Gradients.defualtGradientBg,
+        ),
         alignment: Alignment.center,
         child: Text(
           title,
